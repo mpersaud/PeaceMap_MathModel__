@@ -30,6 +30,8 @@ For BIG PLOT then run python script:
 	3. orange_V_3e
 
 
+The data files: b8.txt, b105.txt, c8.txt, c105.txt, ic8.txt, ic105.txt, btextbxy8.txt, and btextbxy105.txt need to be in the same directory that the programs are using
+
 When asked for "ONLY NUMBER n and I will find cn.txt, etc. (#/a, Def=a)"
 
 	type either: 105 (return) or 8 (return)
@@ -47,7 +49,7 @@ NOTE: for OS10.9.5 or Linux the programs should run, but for WINDOWS you may nee
         # self.mainloop() TO THE EXECUTABLE STATEMENT self.root.mainloop()
 	
 	
-TO CHANGE INITIAL CONDITIONS: use the right hand entry widgets and ENTER
+TO CHANGE INITIAL CONDITIONS: use the left hand entry widgets and ENTER
 
 TO CHANGE THE CONNECTION MATRIX: click on a textbox, use the left hand entry widget, and ENTER (this will also show only the links into and out of that textbox, use ALL Cij to show all the links)
 
