@@ -1,0 +1,5 @@
+# PeaceMap_MathModel_1
+MathModel from ORANGE_5, V_3d, V_3e and data files
+V_3d is little plot
+V_3e is BIG plot
+BOTH HAVE BUG THAT ORIGINALLY LARGER BOX, MADE SMALLER AFTER A CACLULATION, ARE STILL *GHOSTS* THAT CAN BE CLICKED ON
