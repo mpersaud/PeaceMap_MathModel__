@@ -30,7 +30,7 @@ For BIG PLOT then run python script:
 	3. orange_V_3e
 
 
-The data files: b8.txt, b105.txt, c8.txt, c105.txt, ic8.txt, ic105.txt, btextbxy8.txt, and btextbxy105.txt need to be in the same directory that the programs are using
+The data files: b8.txt, b105.txt, c8.txt, c105.txt, ic8.txt, ic105.txt, m8.txt, m105.txt, btextbxy8.txt, and btextbxy105.txt need to be in the same directory that the programs are using
 
 When asked for "ONLY NUMBER n and I will find cn.txt, etc. (#/a, Def=a)"
 
