@@ -45,3 +45,15 @@ When asked for "Want to CHANGE parameters (y/n), def=n"
 NOTE: for OS10.9.5 or Linux the programs should run, but for WINDOWS you may need to change the comment in orangeclass APP: 
 
         # self.mainloop() TO THE EXECUTABLE STATEMENT self.root.mainloop()
+	
+	
+TO CHANGE INITIAL CONDITIONS: use the right hand entry widgets and ENTER
+
+TO CHANGE THE CONNECTION MATRIX: click on a textbox, use the left hand entry widget, and ENTER (this will also show only the links into and out of that textbox, use ALL Cij to show all the links)
+
+TO RUN THE CALCULATION: use CALCULATE
+
+TO SWITCH FROM THE LINKS TO THE INITIAL CONDITIONS use IC on the links input
+
+TO RESTORE THE ORIGINAL INITIAL CONDITIONS use ORIGINAL on the initial conditions input
+	
