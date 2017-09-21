@@ -1,0 +1,8 @@
+ PositiveIntergroupReciprocity	yellow	3865571	2936575	1144725	824024
+ NegativeIntergroupReciprocity	gray	3812432	4193601	1197864	795528
+ PromotiveIntergroupNormativePressures	yellow	3187333	1617193	2524441	467129
+ ContrientIntergroupNormativePressures	gray	3093915	5580113	2524441	467129
+ PositiveIntergroupGoalsandExpectations	yellow	6116520	2965129	2524441	467129
+ Negative Intergroup Goals and Expectations	gray	6116520	4199233	2524441	467129
+ Positive Intergroup History	yellow	299756	2936575	2524441	467129
+ Negative Intergroup History	gray	122449	4199232	2524441	467129

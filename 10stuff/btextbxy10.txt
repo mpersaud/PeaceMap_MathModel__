@@ -1,0 +1,25 @@
+1 PIR	yellow	4131973	2377959	484120	324456
+2 NIR	gray	4148934	3148158	482485	332800
+3 Cooperative Intergroup Interdependence Structures & Processes	yellow	3373888	1482978	1915180	520027
+4 Constructive Conflict Processes & Institutions	gray	3363221	3942648	1887224	467129
+5 Positive Intergroup Historical Memory	yellow	1412807	2322122	1940877	467129
+6 Negative Intergroup Historical Memory	gray	1412807	3156763	1974740	467129
+7 Positive Intergroup Goals and Expectations	yellow	5354697	2299885	1909128	467129
+8 Negative Intergroup Goals and Expectations	gray	5347060	3158666	1916765	467129
+9 Ceremonies & Symbols Celebrating Peace	yellow	7276284	1087748	1199111	463736
+10 Cross-cutting Structures	yellow	1749073	659254	1199111	463736
+11 Overarching Governance	yellow	5676143	659255	1199111	463736
+12 Constructive Conflict Management	gray	3799218	4783480	1199111	463736
+13 Procedural Justice	gray	1749073	4783480	1199111	463736
+14 Safety and Security	gray	5676143	4783481	1199111	463736
+15 Peaceful Leaders and Elite	yellow	7775093	281505	1037385	499333
+16 Sustainable Development	yellow	3877509	6053417	1037385	330124
+17 Self-transcendent values & norms	yellow	321374	292351	1037385	502920
+18 Peace Education Socialization	yellow	1811348	46832	1037385	330124
+19 Shared Identity	yellow	3920913	232972	1037385	547865
+20 Vision of Peace	yellow	5757007	46832	1037385	330124
+21 Equitable Distribution of Resources	gray	1628179	6179178	1607678	330123
+22 Free Flow of Information	gray	321374	5294392	1037385	330124
+23 Basic Need Satisfaction	gray	3863997	5459454	1144159	330124
+24 Norms and Values Devaluing Violence	gray	6298279	5568959	1328757	330124
+25 Rule of Law	gray	2172498	5501409	1037385	330124
