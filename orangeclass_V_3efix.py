@@ -3,7 +3,7 @@ box_II_!.py
     create class of boxes
     readin bxy box locations
     plot boxes
-    
+
 NOW TRYINGING:
     1) RETURN CLICKS INSIDE BOXES
     2) INPUT NEW DATA
@@ -22,7 +22,7 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
 
 class TextBox:
-    list_box=[]  
+    list_box=[]
     selected_box_id=-1
     colors = ['#FFFFFF','#E0F3FC','#CFECF9','#BCE5F7','#ABDAF4','#9FD0F0', '#9AC7E7','#96C3E2','#92BEDC','#8FB9D7','#8BB4D1','#87B0CC','#84ABC6','#80A6C1','#7CA1BB','#789CB5','#7497AF','#7092AA','#6C8DA4','#698AA0','#65859B','#5C798E','#587488','#557185','#506B7D','#4C6678','#486172','#445C6D','#405767','#3B5161']
 
@@ -88,7 +88,7 @@ class ArrowObject:
         if data.a[f][t]!=0:
             self.visible_arrow.append(self)
         ax13.add_patch(self.arrow)
-        
+
 class App:
     #constructor
     def __init__(self):
@@ -102,7 +102,7 @@ class App:
 
 
 
-        # self.mainloop()
+        self.root.mainloop()
 
     def MakeWindow (self):
         self.root=tk.Tk()
@@ -115,14 +115,14 @@ class App:
 
         # self.outsideframepic=tk.Frame(self.root,width=1000, height=1000,bg='bisque')
         self.outsideframed1.pack(side=tk.LEFT,fill=None,expand=False)
-        self.outsideframepic.pack(side=tk.LEFT,fill=None,expand=False)                                 
-        self.outsideframed1.pack_propagate(False) 
-        self.outsideframepic.pack_propagate(False)      
+        self.outsideframepic.pack(side=tk.LEFT,fill=None,expand=False)
+        self.outsideframed1.pack_propagate(False)
+        self.outsideframepic.pack_propagate(False)
         self.framed1=tk.Frame(self.outsideframed1,width=200, height=100,bg='red')
         self.framed1.pack(side=tk.LEFT,fill=None,expand=False)
         self.framepic=tk.Frame(self.outsideframepic,borderwidth=5,relief=tk.RIDGE)
         # self.framepic.pack(side=tk.RIGHT)
-        
+
 #FUDGES TO MAKE WORK ON DESKTOP-1 of 2----------------------------------------
 #         self.framepic.pack(anchor=tk.CENTER,pady=150) #CORRECT
 #         self.framepic.pack(side=tk.TOP) #doesnt expand canvas
@@ -134,7 +134,7 @@ class App:
         self.refreshDataFrame()
         self.refreshPicFrame()
 
-    
+
     def createBoxGraph(self):
         #These next three lines set up the actual graph
         # self.fig13 = plt.figure(facecolor = 'white')
@@ -187,8 +187,8 @@ class App:
 #THIS IS PRETTY IFFY, BOTH GET THE LAST TWO FIGURE NUMBERS AND CLOSE THOSE----
         return f
     #End of Box Graph
-    
- #ADDED SCALING B-------------------------------------------       
+
+ #ADDED SCALING B-------------------------------------------
     def scalebox(vector):
         data2=[0 for i in range(len(vector))]
         minbox,maxbox=2,30
@@ -221,7 +221,7 @@ class App:
             pass_data.t[i]=pass_data.tt
             pass_data.z[i]=pass_data.z[i-1]+pass_data.dx
             for j in range(pass_data.numc):
-                pass_data.z[i][j]=max(pass_data.z[i][j],0.) 
+                pass_data.z[i][j]=max(pass_data.z[i][j],0.)
 #make new plot
         App.MakePlot(data)
 #scale b's from z[-1]
@@ -233,9 +233,9 @@ class App:
         App.ClearFrame(self.framed1)
         App.ClearFrame(self.framepic)
         self.refreshDataFrame()
-        self.refreshPicFrame()        
-        
- 
+        self.refreshPicFrame()
+
+
     def MakePlot(pass_data):
    #     plt.ion() THIS MAKES MATPLOTLIB INTERACTIVE
         print('\nYour plot is ready')
@@ -251,7 +251,7 @@ class App:
             ytext=pass_data.z[-1,i]
             varis=str(i+1)
             plt.text(xtext,ytext,varis)
-            xtext=xtext-1    
+            xtext=xtext-1
         programname='ORANGE-5 FOLDER   '+localtime
         param1='\n   input files= '+str(pass_data.fnamec)+'    '    +str(pass_data.fnameb)+'    '+str(pass_data.fnamem) +'    '+str(pass_data.fnamebtextbxy) + '     dt='+str(pass_data.dt)
         start=App.displayinput(pass_data.z[0],75)
@@ -264,7 +264,7 @@ class App:
 #BUT THAT *STOPS* EXECUTION
 #THIS SHOWS THE GRAPH AND THEN CONTINUES SCRIPT
         plt.show(block=False)
-        
+
     def displayinput(vector1,number):
         #creates string to print from np.array(vector1)
         #that is approximately number characters per line
@@ -291,12 +291,12 @@ class App:
     #         field = entry[0]
     #         text  = entry[1].get()
     #         # print('%s: "%s"' % (field, text))
- 
+
 #CLEARING AND REFRESHING ONLY THE DATA FRAME
     def refreshDataFrame(self):
         self.fixent=1 #UGLY FIX FOR ENTRIES/ENTRIESIJ
         App.ClearFrame(self.framed1)
-        
+
 #Adding new buttons at top
         newframe=tk.Frame(self.framed1,bg='red')
         newframe.pack(side=tk.TOP,pady=5)
@@ -305,17 +305,17 @@ class App:
         tk.Button(newframe,text='original',command= self.resetIC).pack(side=tk.LEFT,padx=30)
         # tk.Button(newframe,text='ALL Cij',command= self.FullrefreshPicFrame).pack(side=tk.LEFT,padx=5)
         # tk.Button(newframe,text=' Change Cij',command= self.refreshCIJFrame).pack(side=tk.LEFT,padx=20)
-#Adding new buttons at top        
-        
-        
-        # self.outsideframed1.pack_propagate(False)      
+#Adding new buttons at top
+
+
+        # self.outsideframed1.pack_propagate(False)
         fields=data.labels
         default=[str(i) for i in range(len(data.labels))]
         entries = []
         # self.framed1=tk.Frame(self.outsideframed1,width=200, height=100,bg='red')
         # self.framed1.pack(side=tk.LEFT,fill=None,expand=False)
     # OK trying to ROUND off in dataframe
-        self.data.zround=[str(round(self.data.z[-1,i],6)) for i in range(len(self.data.z[0]))]                                                           
+        self.data.zround=[str(round(self.data.z[-1,i],6)) for i in range(len(self.data.z[0]))]
         for field in fields:
             row = tk.Frame(self.framed1)
             lab = tk.Label(row, width=15, text=field, anchor='w')
@@ -338,18 +338,18 @@ class App:
         # tk.Button(self.framed1,text='do not click on this buttion',command=self.myquit).pack(side=tk.RIGHT,padx=20)
         self.outsideframed1.pack(expand=1)
         return
-        
+
     def refreshPicFrame(self):
  # #get the data from the current dataframe
- 
+
 #UGLY FIX FOR ENTRIES/ENTRIESIJ
         if self.fixent==1:
             self.data.z[0]=[eval((self.entries[i][1].get())) for i in range(len(self.entries))]
         if self.fixent==2:
             column=[eval((self.entriesIJ[i][1].get())) for i in range(len(self.entriesIJ))]
             self.data.ca[:,self.box_id]=column
-#UGLY FIX FOR ENTRIES/ENTRIESIJ          
-        
+#UGLY FIX FOR ENTRIES/ENTRIESIJ
+
 #scale b's from z[0] - NOT Z[-1] like in A NEW CALCULATION
         vector=data.z[0]
         self.data.b=App.scalebox(vector)
@@ -370,30 +370,30 @@ class App:
 #         tk.Button(newbuttons,text='ALL Cij',command=quit).pack(side=tk.TOP,padx=20)
 # #TURNING THIS OFF, trying to pick up from IV_3
 
-  
+
 # #OK, HIDING THEN SHOWING AFTER PICTURE
 #         framehide=tk.Frame(self.framepic)
 #         framehide.pack(side=tk.TOP,anchor='w',pady=5)
 
-        
-        # self.outsideframepic.pack_propagate(False)   
-#         self.canvas=tk.Canvas(self.framepic,width=200, height=100) #CORRECT  
+
+        # self.outsideframepic.pack_propagate(False)
+#         self.canvas=tk.Canvas(self.framepic,width=200, height=100) #CORRECT
         self.canvas=tk.Canvas(self.framepic,width=800, height=2400)
         f=self.createBoxGraph()
         self.canvas = FigureCanvasTkAgg(f, master=self.framepic)
         self.canvas.show()
         # framehide.pack_forget()
-        
+
 #FUDGES TO MAKE WORK ON DESKTOP-2 of 2----------------------------------------
 #         self.canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=1) # CORRECT
 #         self.canvas._tkcanvas.pack(fill=tk.BOTH, expand=1) #BIG-BAD
         self.canvas._tkcanvas.pack() #BIG ??
 #HERE NOT NEEDED!!
-#FUDGES TO MAKE WORK ON DESKTOP-2 of 2---------------------------------------- 
-               
+#FUDGES TO MAKE WORK ON DESKTOP-2 of 2----------------------------------------
+
         cid=f.canvas.mpl_connect('button_press_event',self.onclick)
     # def UpdateButton(self):
-        
+
     def refreshCIJFrame(self):
 #VARIABLE NUMBER FROM CLICK
 #NB first [] in CA is BOX INTO
@@ -403,23 +403,23 @@ class App:
         App.ClearFrame(self.framed1)
 
         fromto='From    '+data.labels[self.box_id]+'    to'
-  
+
         newframe=tk.Frame(self.framed1,bg='red')
         newframe.pack(side=tk.TOP,pady=5)
         tk.Label(newframe,text=fromto,bg='thistle1').pack(side=tk.LEFT,padx=5)
         tk.Button(newframe,text='ALL Cij',command= self.FullrefreshPicFrame).pack(side=tk.LEFT,padx=5)
         tk.Button(newframe,text='IC',command= self.refreshDataFrame).pack(side=tk.LEFT,padx=5)
-            
-        
-        
-         # 
+
+
+
+         #
          #tk.Label(self.framed1,text=fromto,bg='thistle1').pack(anchor=tk.N,side=tk.LEFT, fill=tk.X, pady=5)
-        # # self.outsideframed1.pack_propagate(False)      
+        # # self.outsideframed1.pack_propagate(False)
         # tk.Button(self.framed1,text='HERE?',command=self.refreshPicFrame).pack(anchor=tk.N,side=tk.RIGHT,fill=tk.X)
-        
+
         fields=self.data.labels
         # default=[str(i) for i in range(len(self.data.labels))]
-        entriesIJ = []                                                         
+        entriesIJ = []
         for field in fields:
             # print('\n\nfield,fields',field,fields)
             row = tk.Frame(self.framed1)
@@ -456,7 +456,7 @@ class App:
     #         field = entry[0]
     #         text  = entry[1].get()
     #         # print('%s: "%s"' % (field, text))
- 
+
     def onclick(self,event):
         for box in TextBox.list_box:
             contains, attrd = box.text.contains(event)
@@ -472,22 +472,20 @@ class App:
                 self.refreshCIJFrame()
                 # TextBox.selected_box_id=id
                 return;
-                
+
     def resetIC(self):
         self.data.z[-1]=[self.data.ica[i] for i in range(len(self.data.z[0]))]
         self.refreshDataFrame()
-    
+
     def FullrefreshPicFrame(self):
         self.fewarrows=0
         self.refreshPicFrame()
-    
+
     def myquit(self):
         print ('\n I did press CLOSE!')
         self.root.destroy()
-        
+
     def ClearFrame(frame):
         for widget in frame.winfo_children():
             widget.destroy()
         # frame.pack_forget()
-        
-        

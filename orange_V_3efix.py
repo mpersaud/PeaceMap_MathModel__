@@ -80,8 +80,8 @@ def getxn(fname):
     #print ('dataline',dataline)
     #print ('xdata',xdata)
     return xdata, numlines
-    
-    
+
+
 #MIDIFYING THIS FUNCTION TO GET THE COLOR
 def getxnsecondstring(fname):   #get n inputs from each line
 #first column=text, next colu1mns all numbers
@@ -104,7 +104,7 @@ def getxnsecondstring(fname):   #get n inputs from each line
                 xdata[i][j]=eval(xdata[i][j])
             else:
                 xdata[i][j]=None8
-                
+
     #print ('dataline',dataline)
     #print ('xdata',xdata)
     return xdata, numlines
@@ -118,7 +118,7 @@ def lslin(invars,invar):
     else:
         outvar=eval(outvars)
     return outvar
-    
+
 #END OF DEFINED FUNCTIONS---------------
 
 
@@ -134,16 +134,16 @@ if fast.isdigit():
 else:
     fname=input('\nfilename for array c [I will add .txt]=  ')
     fnamec=fname+'.txt'
-    
+
     fname=input('\nfilename for array b [I will add .txt]=  ')
     fnameb=fname+'.txt'
-    
+
     fname=input('\nfilename for array m [I will add .txt]=  ')
     fnamem=fname+'.txt'
-    
+
     fname=input('\nfilename for array IC [I will add .txt]=  ')
     fnameic=fname+'.txt'
-    
+
     fname=input('\nfilename for bxy, btext [I will add .txt]=  ')
     fnamebtextbxy=fname+'.txt'
 
@@ -175,7 +175,7 @@ if (change=='y' or change=='Y'):
     b=lslin('b',b)
     m=lslin('m',m)
     ic=lslin('ic',ic)
-    
+
     ma=np.array(m)
     ba=np.array(b)
     ca=np.array(c)
@@ -195,8 +195,8 @@ print('\n btextbxydata= ',btextbxydata)
 #COMPUTE (x,y)=[0,1] needed from PPTX
 bx=[btextbxydata[i][2] for i in range (numvar)]
 by=[btextbxydata[i][3] for i in range (numvar)]
-wx=[btextbxydata[i][5] for i in range (numvar)]
-hy=[btextbxydata[i][4] for i in range (numvar)]
+wx=[btextbxydata[i][4] for i in range (numvar)]
+hy=[btextbxydata[i][5] for i in range (numvar)]
 
 #note this scaling has changed 2017-07-06
 #SCALE as needed for the plot
@@ -212,7 +212,7 @@ maxy,miny=max(yp),min(yp)
 for i in range(numvar):
     xp2[i]=0.9*(xp[i]-minx)/(maxx-minx)+0.05
     yp2[i]=1-(0.9*(yp[i]-miny)/(maxy-miny)+0.05)
-    
+
 bxy=[[xp2[i],yp2[i]] for i in range(numvar)]
 print ('\nbxy=  ',bxy)
 
@@ -223,7 +223,7 @@ t=[0. for i in range(numdata)]
 z=np.array([ica for i in range (numdata)])
 
 #READY TO PASS ON DATA----------------------------------------------------------
-#wrap parameters to pass into function 
+#wrap parameters to pass into function
 pass_data.numdata=numdata
 pass_data.ca=ca
 pass_data.dt=dt
@@ -266,4 +266,3 @@ THESE NEEDED FOR THE FULL PROGRAM
 #---------->call App
 # callGUI()
 """
-
