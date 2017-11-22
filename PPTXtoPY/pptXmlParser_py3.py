@@ -110,12 +110,12 @@ for child in shape_list:
         color = "yellow"
         if rectColor == "accent2" or rectColor == "C0504D":
             color = "gray"
-        print(identifier+"\t"+
-            full_text.rstrip() +  "\t" +"x_offset: "+ x_offset + "\t" + "y_offset: "+ y_offset + "\t" +"width: "+ width + "\t" + "height: "+height)
+        #print(identifier+"\t"+
+        #    full_text.rstrip() +  "\t" +"x_offset: "+ x_offset + "\t" + "y_offset: "+ y_offset + "\t" +"width: "+ width + "\t" + "height: "+height)
         nodes_file.write(
-            full_text.rstrip() + "\t" + color + "\t" + x_offset + "\t" + y_offset + "\t" + width + "\t" + height)
+            full_text.rstrip() + "\t" + color + "\t" + x_offset + "\t" + y_offset + "\t" + height+ "\t" + width)
         #nodes_file.write(identifier + "\t" + color + "\t" +
-        #                 x_offset + "\t" + y_offset + "\t" + width + "\t" + height)
+        #                 x_offset + "\t" + y_offset + "\t" + height + "\t" + width)
         nodes_file.write('\n')
 
         # add to map and increment node counter
